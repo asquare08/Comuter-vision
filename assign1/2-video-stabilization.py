@@ -30,7 +30,7 @@ def main():
 
         current_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         pi, st, _ = cv2.calcOpticalFlowPyrLK(first_gray, current_gray, p0, None, **lk_params)
-        #pi, st = lk.lucasKanadeICAffine(first_gray, current_gray, p0)
+        # pi, st = lk.affinelk(first_gray, current_gray, p0)
 
         H, mask = cv2.findHomography(pi, p0, method=cv2.RANSAC)
         result = cv2.warpPerspective(frame, H, (640, 360))
@@ -39,7 +39,6 @@ def main():
 
         cv2.imshow('stabilized', result)
         cv2.imwrite('output/img_'+str(i).zfill(4)+'.jpg', result)
-
         k = cv2.waitKey(30) & 0xff
         if k == ord('q'):
             break
@@ -48,7 +47,7 @@ def main():
 
 
 if __name__ == '__main__':
-    cap = cv2.VideoCapture('data/GOPR2608.MOV')
+    cap = cv2.VideoCapture('data/shaky.mov')
 
     main()
 

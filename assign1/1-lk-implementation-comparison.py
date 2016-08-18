@@ -20,8 +20,9 @@ def track(old_gray, p0):
 
         frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+        # lucas-kanade optical flow
         p1, st, err = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray, p0, None, **lk_params)
-        # p1, st = lk.lucasKanadeICAffine(old_gray, frame_gray, p0)
+        # p1, st = lk.affinelk(old_gray, frame_gray, p0)
 
         # Select good points
         good_new = p1[st == 1]
