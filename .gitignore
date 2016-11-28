@@ -92,3 +92,11 @@ assign1/data/stabilized_lk.mp4
 assign1/data/stabilized_opencv.mp4
 assign1/report.pdf
 assign1/.idea/
+assign3/.idea/
+cv-project-license-plate-recognition/output/
+deep learning/.idea/
+cv-project-license-plate-recognition/.idea/
+*.DS_Store
+cv-project-license-plate-recognition/data/video1.avi
+cv-project-license-plate-recognition/data/video1.mp4
+cv-project-license-plate-recognition/data/video2.avi
